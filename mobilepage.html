@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile First Design</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+      
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+           
+        }
+
+        .container {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 0;
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav .logo-section {
+            display: flex;
+            align-items: center;
+        }
+
+        nav .logo {
+            max-width: 120px;
+            height: auto;
+        }
+
+        .search-block {
+            border: 1px solid #D9DDE7;
+            padding: 0.5rem 0.8rem;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            margin-left: 1.4rem;
+        }
+
+        nav input {
+            border: none;
+            outline: none;
+            min-width: 190px;
+            padding: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .hero {
+            background-image: url('C:\WDT\background1.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .hero__btn-block {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .hero__btn-block .btn {
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            margin: 0 0.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: #25DF8F;
+            color: #fff;
+        }
+
+        .btn-secondary {
+            background-color: #C1C8D7;
+            color: #2B313D;
+        }
+
+        .apartments {
+            padding: 3rem 0;
+            background-color: #f6f6f7;
+        }
+
+        .section-heading {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+        }
+
+        .section-heading h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2B313D;
+        }
+
+        .apartments__list-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .apartments__card {
+            display: flex;
+            flex-direction: column;
+            background: #fff;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            height: 100%;
+            justify-content: space-between;
+        }
+
+        .apartments__card img {
+            width: 50%;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .apartments__meta {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #596172;
+        }
+
+        .apartments__title a {
+            color: #2B313D;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-top: 1rem;
+            display: block;
+        }
+
+        .btn-add-cart {
+            padding: 0.6rem 1.5rem;
+            margin-top: 1rem;
+            background-color: #FF6F61;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-align: center;
+        }
+
+        .btn-add-cart:hover {
+            background-color: #ff4b3d;
+        }
+
+        @media (min-width: 768px) {
+            .hero {
+                background-image: url('C:\WDT\background1.jpg');
+                background-position: center;
+            }
+            .apartments__card img{
+                width: 50%;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero__btn-block .btn {
+                font-size: 1.2rem;
+            }
+            .apartments__card img{
+                width: 50%;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+
+            .hero__btn-block .btn {
+                font-size: 1.3rem;
+            }
+            .apartments__card img{
+                width: 50%;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <section class="apartments">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Mobile Devices</h2>
+                <a href="#">Show All (328)</a>
+            </div>
+            <div class="apartments__list-wrapper">
+              
+                <div class="apartments__card">
+                    <img src="https://m.media-amazon.com/images/I/613SAOPmLeL._SX679_.jpg" alt="OnePlus 11R 5G">
+                    <div class="apartments__meta">
+                        <span>$28,000</span>
+                        <span>Click to know more ✨🎉</span>
+                    </div>
+                    <div class="apartments__title">
+                        <a href="#">OnePlus 11R 5G (Galactic Silver, 8GB RAM, 128GB Storage)</a>
+                    </div>
+                    <a href="cartoneplus.html">   <button class="btn-add-cart">Add to Cart</button></a>
+                </div>
+
+                <!-- Mobile Card 2 -->
+                <div class="apartments__card">
+                    <img src="https://m.media-amazon.com/images/I/41q3kxEWU-L._SX300_SY300_QL70_FMwebp_.jpg" alt="Vivo V40 5G">
+                    <div class="apartments__meta">
+                        <span>$29,000</span>
+                        <span>Click for more details</span>
+                    </div>
+                    <div class="apartments__title">
+                        <a href="cartoneplus.html">Vivo V40 5G (Lotus Purple, 8GB RAM, 128GB Storage)</a>
+                    </div>
+                <a href="cartvivo40.html">  <button class="btn-add-cart">Add to Cart</button></a>  
+                </div>
+
+                <!-- Mobile Card 3 -->
+                <div class="apartments__card">
+                    <img src="https://m.media-amazon.com/images/I/71nrf4zgq5L._SX679_.jpg" alt="Redmi Note 13">
+                    <div class="apartments__meta">
+                        <span>$24,500</span>
+                        <span>Details & Offers</span>
+                    </div>
+                    <div class="apartments__title">
+                        <a href="cartvivo40.html">Vivo V40 5G (Lotus Purple, 8GB RAM, 128GB Storage)</a>
+                    </div>
+                    <a href="cart.html">   <button class="btn-add-cart">Add to Cart</button></a>
+                </div>
+
+              
+                <div class="apartments__card">
+                    <img src="https://m.media-amazon.com/images/I/81nJiu51M+L._AC_UY218_.jpg" alt="Redmi Note 13">
+                    <div class="apartments__meta">
+                        <span>$14,500</span>
+                        <span>Details & Offers</span>
+                    </div>
+                    <div class="apartments__title">
+                        <a href="#">Samsung Galaxy M33 5G</a>
+                    </div>
+                    <a href="cart.html">    <button class="btn-add-cart">Add to Cart</button></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

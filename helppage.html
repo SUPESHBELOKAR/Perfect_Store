@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help </title>
+    <link rel="stylesheet" href="helppage.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="logo.png" alt="TechStore Logo" class="logo-img">
+                <h1>Perfect Store</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    
+                    <li><a href="contactus.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h2>How Can We Help You?</h2>
+
+        <section class="help-section">
+            <h3>FAQ</h3>
+            <ul>
+                <li>
+                    <button class="question" onclick="toggleAnswer('answer1')">How do I place an order?</button>
+                    <div id="answer1" class="answer">
+                        <p>To place an order, browse our catalog, add items to your cart, and proceed to checkout.</p>
+                    </div>
+                </li>
+                <li>
+                    <button class="question" onclick="toggleAnswer('answer2')">How can I track my order?</button>
+                    <div id="answer2" class="answer">
+                        <p>You can track your order by logging into your account and checking the "Orders" section.</p>
+                    </div>
+                </li>
+                <li>
+                    <button class="question" onclick="toggleAnswer('answer3')">What payment methods do you accept?</button>
+                    <div id="answer3" class="answer">
+                        <p>We accept credit cards, PayPal, and gift cards.</p>
+                    </div>
+                </li>
+                <li>
+                    <button class="question" onclick="toggleAnswer('answer4')">How can I return an item?</button>
+                    <div id="answer4" class="answer">
+                        <p>You can return items within 30 days of purchase. Visit the "Returns" section in your account for more details.</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section class="contact-info">
+            <h3>Contact Us</h3>
+            <p>If you need further assistance, please don't hesitate to contact us.</p>
+            <button onclick="showContactForm()">Contact Support</button>
+
+            <div id="contactForm" class="contact-form">
+                <h4>Contact Support</h4>
+                <form>
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" required><br>
+
+                    <label for="email">Your Email:</label>
+                    <input type="email" id="email" name="email" required><br>
+
+                    <label for="message">Message:</label><br>
+                    <textarea id="message" name="message" rows="4" required></textarea><br>
+
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </section>
+
+       
+        <section class="iframe-section">
+            <h3>How to shop </h3>
+            <p>Watch the video below to learn more about how to shop on TechStore:</p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Go_ZOq5Y0Fk?si=24AefJSAxTZFQv1g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </section>
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2024 TechStore. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        
+        function toggleAnswer(answerId) {
+            var answer = document.getElementById(answerId);
+            if (answer.style.display === "block") {
+                answer.style.display = "none";
+            } else {
+                answer.style.display = "block";
+            }
+        }
+
+       
+        function showContactForm() {
+            var form = document.getElementById("contactForm");
+            form.style.display = "block";
+        }
+    </script>
+</body>
+
+</html>

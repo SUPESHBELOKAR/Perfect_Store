@@ -1,0 +1,156 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('background3.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+}
+
+.nav-buttons {
+    display: flex;
+}
+
+.nav-btn {
+    margin-left: 20px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.nav-btn:hover {
+    background-color: #555;
+}
+
+.track-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 40px 20px;
+    margin-top: 100px;  
+    width: 60%;
+    margin: auto;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.8);
+}
+
+.track-container h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.order-status {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.order-status h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.status-steps {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.step {
+    text-align: center;
+    flex: 1;
+}
+
+.step-number {
+    font-size: 24px;
+    font-weight: bold;
+    background-color: #ddd;
+    color: #333;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.step p {
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.step.completed .step-number {
+    background-color: #ddd;
+    color: white;
+}
+
+
+.step.active .step-number {
+    background-color: green;
+    color: white;
+}
+
+
+.action-buttons {
+    margin-top: 30px;
+}
+
+.btn-action {
+    padding: 12px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px;
+    text-decoration: none;
+}
+
+.btn-action:hover {
+    background-color: #45a049;
+}
+
+
+.footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 14px;
+}

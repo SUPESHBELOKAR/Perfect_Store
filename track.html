@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Track Your Order</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('background3.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            width: 80px;
+            height: auto;
+        }
+
+        .nav-buttons {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            margin-left: 10px;
+            padding: 10px 15px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .nav-btn:hover {
+            background-color: #555;
+        }
+
+        .track-container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 30px 15px;
+            margin-top: 100px;
+            width: 90%;
+            max-width: 600px;
+            margin: auto;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        .track-container h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .order-status {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .order-status h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .status-steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+
+        .step {
+            text-align: center;
+            flex: 1;
+            min-width: 70px;
+            margin: 5px;
+        }
+
+        .step-number {
+            font-size: 18px;
+            font-weight: bold;
+            background-color: #ddd;
+            color: #333;
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+        }
+
+        .step p {
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        .step.completed .step-number {
+            background-color: #ddd;
+            color: white;
+        }
+
+        .step.active .step-number {
+            background-color: green;
+            color: white;
+        }
+
+        .action-buttons {
+            margin-top: 20px;
+        }
+
+        .btn-action {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            margin: 5px;
+            text-decoration: none;
+        }
+
+        .btn-action:hover {
+            background-color: #45a049;
+        }
+
+        .footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            font-size: 12px;
+        }
+
+        /* Mobile responsiveness */
+        @media screen and (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+                padding: 10px;
+            }
+
+            .nav-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-btn {
+                margin: 5px 0;
+            }
+
+            .track-container {
+                width: 90%;
+                padding: 20px;
+            }
+
+            .track-container h2 {
+                font-size: 24px;
+            }
+
+            .order-status h3 {
+                font-size: 18px;
+            }
+
+            .status-steps {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .step {
+                margin: 10px 0;
+            }
+
+            .step-number {
+                width: 30px;
+                height: 30px;
+                font-size: 16px;
+            }
+
+            .action-buttons {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn-action {
+                margin: 10px 0;
+            }
+
+            .footer {
+                font-size: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="logo.png" alt="Logo" class="logo"> 
+       
+    </header>
+
+    <div class="track-container">
+        <h2>Your Order Status</h2>
+        <div class="order-status">
+            <h3>Vivo 40 5G</h3>
+            <div class="status-steps">
+                <div class="step active">
+                    <span class="step-number">1</span>
+                    <p>Order Placed</p>
+                </div>
+                <div class="step completed">
+                    <span class="step-number">2</span>
+                    <p>Processing</p>
+                </div>
+                <div class="step completed">
+                    <span class="step-number">3</span>
+                    <p>Shipped</p>
+                </div>
+                <div class="step completed">
+                    <span class="step-number">4</span>
+                    <p>Out for Delivery</p>
+                </div>
+                <div class="step">
+                    <span class="step-number">5</span>
+                    <p>Delivered</p>
+                </div>
+            </div>
+        </div>
+        <div class="action-buttons">
+            <a href="sucess.html"><button class="btn-action">Back</button></a>
+            <a href="index.html"><button class="btn-action">Go to Homepage</button></a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Your Company Name. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

@@ -8,229 +8,338 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-        }
       
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f5f5f5;
-            color: #333;
-           
-        }
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
 
-        .container {
-            width: 90%;
-            margin: 0 auto;
-        }
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-        nav {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 1rem 0;
-            background-color: #ffffff;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
+/* Styling for links */
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
-        nav .logo-section {
-            display: flex;
-            align-items: center;
-        }
+h1, h2, h3, p {
+    margin: 0 0 10px;
+}
 
-        nav .logo {
-            max-width: 120px;
-            height: auto;
-        }
+/* Button Styling */
+button {
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.header-links button {
+    padding: 8px 15px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    margin-left: 10px;
+}
+button:hover {
+    opacity: 0.8;
+    color: #4111d1;
+}
+/* Mobile-specific Styles */
+.nav, .hero, .apartments__list-wrapper {
+    display: block;
+    color: #007bff;
+}
 
-        .search-block {
-            border: 1px solid #D9DDE7;
-            padding: 0.5rem 0.8rem;
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            margin-left: 1.4rem;
-        }
+nav {
+    padding: 1rem 0;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 
-        nav input {
-            border: none;
-            outline: none;
-            min-width: 190px;
-            padding: 0.5rem;
-            font-size: 1rem;
-        }
+nav .logo-section {
+    display: flex;
+    align-items: center;
+}
 
-        .hero {
-            background-image: url('C:\WDT\background1.jpg');
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #fff;
-            text-align: center;
-            padding: 0 20px;
-        }
+nav .logo {
+    max-width: 120px;
+    height: auto;
+}
 
-        .hero h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
+.search-block {
+    border: 1px solid #D9DDE7;
+    padding: 0.5rem 0.8rem;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    margin-left: 1.4rem;
+}
 
-        .hero__btn-block {
-            display: flex;
-            justify-content: center;
-            margin-top: 2rem;
-        }
+nav input {
+    border: none;
+    outline: none;
+    min-width: 190px;
+    padding: 0.5rem;
+    font-size: 1rem;
+}
 
-        .hero__btn-block .btn {
-            padding: 1rem 2rem;
-            border-radius: 5px;
-            margin: 0 0.5rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
+.hero {
+    background-image: url('C:\WDT\background1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    padding: 0 20px;
+}
 
-        .btn-primary {
-            background-color: #25DF8F;
-            color: #fff;
-        }
+.hero h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
 
-        .btn-secondary {
-            background-color: #C1C8D7;
-            color: #2B313D;
-        }
+.hero__btn-block {
+    display: flex;
+    color: green;
+    justify-content: center;
+    margin-top: 2rem;
+}
 
-        .apartments {
-            padding: 3rem 0;
-            background-color: #f6f6f7;
-        }
+.hero__btn-block .btn {
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    margin: 0 0.5rem;
+    color: #25DF8F;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
 
-        .section-heading {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 2rem;
-        }
+.btn-primary {
+    background-color: #25DF8F;
+    color: #fff;
+}
 
-        .section-heading h2 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #2B313D;
-        }
+.btn-secondary {
+    background-color: #C1C8D7;
+    color: #13419e;
+}
 
-        .apartments__list-wrapper {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
+/* Product listing styles */
+.apartments {
+    padding: 2rem 0;
+    background-color: #f6f6f7;
+}
 
-        .apartments__card {
-            display: flex;
-            flex-direction: column;
-            background: #fff;
-            padding: 1rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            height: 100%;
-            justify-content: space-between;
-        }
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
 
-        .apartments__card img {
-            width: 50%;
-            height: 100px;
-            object-fit: cover;
-            border-radius: 8px;
-        }
+.section-heading h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2B313D;
+}
 
-        .apartments__meta {
-            margin-top: 1rem;
-            font-size: 0.9rem;
-            color: #596172;
-        }
+.apartments__list-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
 
-        .apartments__title a {
-            color: #2B313D;
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: bold;
-            margin-top: 1rem;
-            display: block;
-        }
+.apartments__card {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    justify-content: space-between;
+    text-align: center;
+}
 
-        .btn-add-cart {
-            padding: 0.6rem 1.5rem;
-            margin-top: 1rem;
-            background-color: #FF6F61;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            text-align: center;
-        }
+.apartments__card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
 
-        .btn-add-cart:hover {
-            background-color: #ff4b3d;
-        }
+.apartments__meta {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #596172;
+}
 
-        @media (min-width: 768px) {
-            .hero {
-                background-image: url('C:\WDT\background1.jpg');
-                background-position: center;
-            }
-            .apartments__card img{
-                width: 50%;
-            height: 100px;
-            object-fit: cover;
-            border-radius: 8px;
-            }
-        }
+.apartments__title a {
+    color: #2B313D;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    display: block;
+}
 
-        @media (min-width: 992px) {
-            .hero h1 {
-                font-size: 3rem;
-            }
+.btn-add-cart {
+    padding: 0.6rem 1.5rem;
+    margin-top: 1rem;
+    background-color: #FF6F61;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
 
-            .hero__btn-block .btn {
-                font-size: 1.2rem;
-            }
-            .apartments__card img{
-                width: 50%;
-            height: 100px;
-            object-fit: cover;
-            border-radius: 8px;
-            }
-        }
+.btn-add-cart:hover {
+    background-color: #ff4b3d;
+}
 
-        @media (min-width: 1200px) {
-            .hero h1 {
-                font-size: 3.5rem;
-            }
+/* Responsive Design for Larger Screens */
+@media (min-width: 768px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+}
 
-            .hero__btn-block .btn {
-                font-size: 1.3rem;
-            }
-            .apartments__card img{
-                width: 50%;
-            height: 100px;
-            object-fit: cover;
-            border-radius: 8px;
-            }
-        }
+@media (min-width: 992px) {
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .hero h1 {
+        font-size: 4rem;
+    }
+}
+/* Cart Page Styles */
+.cart {
+    padding: 2rem 0;
+    background-color: #f6f6f7;
+}
+
+.cart h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+#cart-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.cart-item div {
+    flex: 1;
+    padding-left: 1rem;
+}
+
+.cart-item p {
+    margin: 0;
+}
+
+.total-price {
+    text-align: right;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+.cart-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+button {
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+button:focus {
+    outline: none;
+}
+.header-links button {
+    padding: 8px 15px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    margin-left: 10px;
+}
+/* Responsive Design for Cart Page */
+@media (max-width: 768px) {
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cart-item img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .total-price {
+        font-size: 1.1rem;
+    }
+
+    .cart-footer button {
+        padding: 0.8rem 1.5rem;
+    }
+}
+
     </style>
 </head>
 
 <body>
-
-
 
     <section class="apartments">
         <div class="container">
@@ -239,7 +348,8 @@
                 <a href="#">Show All (328)</a>
             </div>
             <div class="apartments__list-wrapper">
-              
+
+               
                 <div class="apartments__card">
                     <img src="https://m.media-amazon.com/images/I/613SAOPmLeL._SX679_.jpg" alt="OnePlus 11R 5G">
                     <div class="apartments__meta">
@@ -248,11 +358,10 @@
                     </div>
                     <div class="apartments__title">
                         <a href="#">OnePlus 11R 5G (Galactic Silver, 8GB RAM, 128GB Storage)</a>
+                        <button onclick="addToCart('OnePlus 11R 5G (Galactic Silver)', 28000, 'https://m.media-amazon.com/images/I/613SAOPmLeL._SX679_.jpg')">Add to cart</button>
                     </div>
-                    <a href="cartoneplus.html">   <button class="btn-add-cart">Add to Cart</button></a>
                 </div>
 
-                <!-- Mobile Card 2 -->
                 <div class="apartments__card">
                     <img src="https://m.media-amazon.com/images/I/41q3kxEWU-L._SX300_SY300_QL70_FMwebp_.jpg" alt="Vivo V40 5G">
                     <div class="apartments__meta">
@@ -260,12 +369,12 @@
                         <span>Click for more details</span>
                     </div>
                     <div class="apartments__title">
-                        <a href="cartoneplus.html">Vivo V40 5G (Lotus Purple, 8GB RAM, 128GB Storage)</a>
+                        <a href="#">Vivo V40 5G (Lotus Purple, 8GB RAM, 128GB Storage)</a>
+                        <button onclick="addToCart('Vivo V40 5G', 29000, 'https://m.media-amazon.com/images/I/41q3kxEWU-L._SX300_SY300_QL70_FMwebp_.jpg')">Add to cart</button>
                     </div>
-                <a href="cartvivo40.html">  <button class="btn-add-cart">Add to Cart</button></a>  
                 </div>
 
-                <!-- Mobile Card 3 -->
+             
                 <div class="apartments__card">
                     <img src="https://m.media-amazon.com/images/I/71nrf4zgq5L._SX679_.jpg" alt="Redmi Note 13">
                     <div class="apartments__meta">
@@ -273,26 +382,44 @@
                         <span>Details & Offers</span>
                     </div>
                     <div class="apartments__title">
-                        <a href="cartvivo40.html">Vivo V40 5G (Lotus Purple, 8GB RAM, 128GB Storage)</a>
+                        <a href="#">Redmi Note 13</a>
+                        <button onclick="addToCart('Redmi Note 13', 24500, 'https://m.media-amazon.com/images/I/71nrf4zgq5L._SX679_.jpg')">Add to cart</button>
                     </div>
-                    <a href="cart.html">   <button class="btn-add-cart">Add to Cart</button></a>
                 </div>
 
-              
                 <div class="apartments__card">
-                    <img src="https://m.media-amazon.com/images/I/81nJiu51M+L._AC_UY218_.jpg" alt="Redmi Note 13">
+                    <img src="https://m.media-amazon.com/images/I/81nJiu51M+L._AC_UY218_.jpg" alt="Samsung Galaxy M33 5G">
                     <div class="apartments__meta">
                         <span>$14,500</span>
                         <span>Details & Offers</span>
                     </div>
                     <div class="apartments__title">
                         <a href="#">Samsung Galaxy M33 5G</a>
+                        <button onclick="addToCart('Samsung Galaxy M33 5G', 14500, 'https://m.media-amazon.com/images/I/81nJiu51M+L._AC_UY218_.jpg')">Add to cart</button>
                     </div>
-                    <a href="cart.html">    <button class="btn-add-cart">Add to Cart</button></a>
                 </div>
+
             </div>
         </div>
     </section>
+
+    <script>
+        function addToCart(productName, productPrice, productImage) {
+      
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+            cart.push({ name: productName, price: productPrice, image: productImage });
+
+            // Save the updated cart back to localStorage
+            localStorage.setItem("cart", JSON.stringify(cart));
+
+            // Optionally alert the user
+            alert(productName + " added to cart!");
+
+            // Redirect to cart page
+            window.location.href = "ac.html";
+        }
+    </script>
 
 </body>
 

@@ -297,41 +297,37 @@ footer {
                 <img src="https://m.media-amazon.com/images/I/91BSflfKpJL._AC_SY145_.jpg" alt="Mobile">
                 <h3>Mobile</h3>
                 <p>Click for more</p>
-                <a href="mobilepage.html"><button>OPEN</button></a>
+              <a href="mobilepage.html"> <button>Shop Now</button></a> 
             </div>
 
             <div class="product-card">
                 <img src="https://m.media-amazon.com/images/I/71bDJ9wxxWL._AC_UY218_.jpg" alt="Laptop">
-                <h3>Laptop:Lenovo IdeaPad 1 AMD</h3>
-                <p>Prize:30000</p>
-                <a href="cartlaptop.html"><button>Add to cart</button></a>
+                <h3>Laptop: Lenovo IdeaPad 1 AMD</h3>
+                <p>Prize: 30000</p>
+                <button onclick="addToCart('Laptop: Lenovo IdeaPad 1 AMD', 30000, 'https://m.media-amazon.com/images/I/71bDJ9wxxWL._AC_UY218_.jpg')">Add to cart</button>
             </div>
-
-     
-
+            
             <div class="product-card">
-                <img src="https://m.media-amazon.com/images/I/51Q11RNy8dL._AC_UY218_.jpg" alt="Electronics">
-                <h3>Kettel</h3>
+                <img src="https://m.media-amazon.com/images/I/51Q11RNy8dL._AC_UY218_.jpg" alt="Kettle">
+                <h3>Kettle</h3>
                 <p>Prize: 700</p>
-                <button><a href="cartkettel.html">Add to cart</button></a>
+                <button onclick="addToCart('Kettle', 700, 'https://m.media-amazon.com/images/I/51Q11RNy8dL._AC_UY218_.jpg')">Add to cart</button>
             </div>
-
-           
-
+            
             <div class="product-card">
                 <img src="https://m.media-amazon.com/images/I/81+UNWnGK2L._AC_UL320_.jpg" alt="Jewelry">
-                <h3>Jewelry:Sasitrends</h3>
-                <p>Prize:999</p>
-                <a href="cartjellary.html"><button>Add to cart </button></a>
+                <h3>Jewelry: Sasitrends</h3>
+                <p>Prize: 999</p>
+                <button onclick="addToCart('Jewelry: Sasitrends', 999, 'https://m.media-amazon.com/images/I/81+UNWnGK2L._AC_UL320_.jpg')">Add to cart</button>
             </div>
-
-
+            
             <div class="product-card">
                 <img src="https://m.media-amazon.com/images/I/41zd1OAciUL.AC_SX250.jpg" alt="Books">
-                <h3>Books(Ratan Tata:A life)</h3>
-                <p>Prize:350</p>
-                <a href="bookcart.html"><button>Add to cart</button></a>
+                <h3>Books: Ratan Tata: A Life</h3>
+                <p>Prize: 350</p>
+                <button onclick="addToCart('Books: Ratan Tata: A Life', 350, 'https://m.media-amazon.com/images/I/41zd1OAciUL.AC_SX250.jpg')">Add to cart</button>
             </div>
+                        
         </div>
     </main>
 
@@ -347,6 +343,26 @@ footer {
     </footer>
 
     <script>
+        
+    
+    function addToCart(productName, productPrice, productImage) {
+        // Get the cart from localStorage or initialize an empty array
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        // Add the selected product to the cart array
+        cart.push({ name: productName, price: productPrice, image: productImage });
+
+        // Save the updated cart back to localStorage
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        // Optionally alert the user
+        alert(productName + " added to cart!");
+
+        // Redirect to cart page
+        window.location.href = "ac.html";
+    }
+
+
         function searchProduct() {
             let searchInput = document.getElementById("searchInput").value.toLowerCase();
             alert("Searching for: " + searchInput);
